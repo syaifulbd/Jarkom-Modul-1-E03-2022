@@ -19,7 +19,37 @@ Jawaban : Evaluasi unjuk kerja User Space Filesystem (FUSE)
 - Terlihat selanjutnya setelah detail topik adalah lanjut ke halaman 194 (juga dari response in frame menuju paket 599), dimana ketika dilihat paket 599 berisi halaman 194 juga, dan ketika di export object halaman 194 berisi file txt/html, kemudian simpan file tersebut
 ![Gambar 2.b](img/2b.jpg)
 - Kemudian buka file tersebut melalui browser maka akan terbuka halaman yang dibuka Ishaq yaitu berisi topik tugas akhir yang berjudul “Evaluasi unjuk kerja User Space Filesystem (FUSE)”
-![Gambar 2.c](img/2c.jpg)
+![Gambar 2.c](img/2c.jpg)<br>
+
+### 3. Filter sehingga wireshark hanya menampilkan paket yang menuju port 80!
+Jawaban: Diawali dengan membuka soal3-6.pcapng, kemudian melakukan display filter
+dengan sintaks “tcp.dstport == 80 || udp.dstport == 80” dan didapatkan hasilnya sebagai
+berikut. <br>
+![gambar](https://user-images.githubusercontent.com/59316805/192100275-d469948d-69ad-4419-b9e1-16bb17734bd2.png)<br>
+
+### 4. Filter sehingga wireshark hanya mengambil paket yang berasal dari port 21!
+Jawaban: Diawali dengan memilih connection pada homepage wireshark, lalu
+memasukkan capture filter “src port 21” dan setelah ditunggu beberapa saat, dari
+connection Wi-Fi yang saya pilih saya tidak mendapatkan hasil apapun.
+![gambar](https://user-images.githubusercontent.com/59316805/192100379-00a7e618-21d2-4ac5-95fa-8946129a2032.png)<br>
+
+### 5. Filter sehingga wireshark hanya mengambil paket yang berasal dari port 443!
+Jawaban: Diawali dengan memilih connection pada homepage wireshark, lalu
+memasukkan capture filter “src port 443” dan didapatkan hasilnya setelah beberapa saat
+sebagai berikut.
+![gambar](https://user-images.githubusercontent.com/59316805/192100475-942faa97-e53d-4fd3-97cd-4886a149cbea.png)<br>
+
+### 6. Filter sehingga wireshark hanya menampilkan paket yang menuju ke lipi.go.id!
+Jawaban: Diawali dengan membuka file soal3-6.pcapng, kemudian kita memasukkan
+display filter dengan sintaks “http contains “lipi.go.id”” maka didapatkan hasilnya
+sebagai berikut.
+![gambar](https://user-images.githubusercontent.com/59316805/192101463-5197b761-44ca-484d-9987-376ca5dbe089.png)<br>
+
+### 7. Filter sehingga wireshark hanya mengambil paket yang berasal dari ip kalian!
+Jawaban: Diawali dengan memilih connection pada homepage wireshark, lalu
+memasukkan capture filter “src host 192.168.18.182” dimana 192.168.18.182 merupakan
+IPV4 yang saya gunakan, dan didapatkan hasilnya setelah beberapa saat sebagai berikut.
+![gambar](https://user-images.githubusercontent.com/59316805/192101526-329b3dd4-bb99-47a7-9bea-b5e283ec0a88.png)<br>
 
 ### 8. Telusuri aliran paket dalam file .pcap yang diberikan, cari informasi berguna berupa percakapan antara dua mahasiswa terkait tindakan kecurangan pada kegiatan praktikum. Percakapan tersebut dilaporkan menggunakan protokol jaringan dengan tingkat keandalan yang tinggi dalam pertukaran datanya sehingga kalian perlu menerapkan filter dengan protokol yang tersebut.
 Jawaban : Diawali dengan membuka file soal8-10.pcapng, kemudian dikarenakan kita perlu memperhatikan protokol jaringan dengan tingkat keandalan yang tinggi dalam pertukaran datanya, kita dapat mengecek protokol TCP dengan melakukan display filter "tcp", kemudian kita dapat melihat streamnya dengan klik kanan salah satu paket TCP dan memilih opsi Follow>TCP Stream dan kita dapat menjelajah TCP Streamnya 1 per 1 hingga menemukan percakapan rahasia yang dimaksud. Saya juga memasukkan beberapa paket yang berisi informasi lain sebagai berikut. Kendala yang kami alami yakni sebelum revisi kami tidak melakukan display filter "tcp" sehingga tidak mengikuti suruhan soal dengan sesuai. <br>
